@@ -5,13 +5,17 @@ from random import randint, choice
 import time
 
 def mainloop():
+    #main values
+    closed = False
+    gameType = 0 # 0 - default/ 1 - fight/ 2 - inventory/ 3 - map/ 4 - dialogue/6/7/8/9
     debug_value = 0
     debug_string = (" debug")
     screen_width = 120
     screen_height = 40
+    BASE_damage = 5
+    #player values
     map_x = 0
     map_y = 0
-    BASE_damage = 5
     player_infight = False
     player_alive = True
     player_lvl = 1
@@ -25,7 +29,9 @@ def mainloop():
     debug_view = ("[color=orange]Debug string:" + debug_string + "[/color]]") #make string in puts rather than
     blt.puts(2, 3, debug_view)                                                #create another variable
     blt.refresh()
-    time.sleep(5)
+    while closed == False:
+        blt.refresh()
+    
     
 
 if __name__ == "__main__":
